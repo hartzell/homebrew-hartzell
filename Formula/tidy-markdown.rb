@@ -14,6 +14,18 @@ class TidyMarkdown < Formula
   end
 
   test do
-    ohai "Need to implement a test"
+    (testpath/"test.md").write <<-EOS.undent
+      #    Now is the time
+
+      header1 | header 2 | long header number 3
+      ---|---|---
+      foo|bar mitzvah| baz
+      eenie|meenie|myne-mo
+
+    EOS
+    cmd = ["cat", testpath/"test.md", "|", bin/"tidy-markdown"].join(' ')
+    s = pipe_output(cmd)
+    # check if it cleaned up the extra whitespace after the h1
+    assert_match /# Now is the time/, s
   end
 end
