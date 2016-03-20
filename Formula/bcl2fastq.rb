@@ -18,6 +18,14 @@ class Bcl2fastq < Formula
       :using => ZippedTGZStrategy
   sha256 "3cf566f8bf02629e4367015511802680dc5481d44ff79559b186705f68f80c27"
 
+  depends_on "boost" => :build
+  depends_on "cmake" => :build
+
+  resource "zlib" do
+    url "http://zlib.net/zlib-1.2.8.tar.gz"
+    sha256 "36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+  end
+
   def install
     ohai "Your files, sir:", Dir["*"]
   end
