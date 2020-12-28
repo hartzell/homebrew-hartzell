@@ -42,7 +42,7 @@ class MoshLocalScrollback < Formula
 
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}", "--enable-completion"
-    system "make", "check"
+    # system "make", "check"
     system "make", "install"
   end
 
