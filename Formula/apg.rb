@@ -5,10 +5,10 @@ class Apg < Formula
   url "http://shrimp.alerce.com/homebrew/apg-2.2.3-osx.tar.gz"
   sha256 "3b0ece67d504bdf73736dea430223ce82aac813293cc91f905843b750b8a0fdd"
 
-  bottle do
-    cellar :any_skip_relocation
-    rebuild 1
-  end
+#  bottle do
+#    cellar :any_skip_relocation
+#    rebuild 1
+#  end
 
   def install
     system "make", "standalone", "CC=#{ENV.cc}", "FLAGS=#{ENV.cflags}"
