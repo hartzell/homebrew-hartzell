@@ -18,11 +18,11 @@ class MoshLocalScrollback < Formula
 
   uses_from_macos "ncurses"
 
-  # patch :DATA
-  patch do
-    url "https://github.com/mobile-shell/mosh/compare/master...rledisez:localScrollback-1.3.2.patch"
-    sha256 "95fee840c11aa3d9233c31792602ca7d790bab6400d6ba8901542b428a245c41"
-  end
+  patch :DATA
+  # patch do
+  #   url "https://github.com/mobile-shell/mosh/compare/master...rledisez:localScrollback-1.3.2.patch"
+  #   sha256 "95fee840c11aa3d9233c31792602ca7d790bab6400d6ba8901542b428a245c41"
+  # end
 
   # Fix mojave build.
   unless build.head?
